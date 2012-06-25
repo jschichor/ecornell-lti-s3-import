@@ -1,0 +1,9 @@
+This is an LTI tool written in Java that allows Instructure's Canvas to import resources (by reference) from Amazon's S3 service directly from the wysiwyg editor. This tool was originally written as an in-house utility, but I was requested to make it publicly available after interest was shown at the 2012 Instructurecon. I've tidied up the code a bit, but it is by no means a professional-grade product. Please think of this as a starting point or a proof of concept.
+
+There is only one file that should require modification for out-of-the-box functionality, and that's the web.xml file location at src/main/webapp/WEB_INF/web.xml. There are a number of comments that must be replaced with values relevant to your organization. After that, the maven project can be packaged and installed in the web server of your choice.
+
+I hope this tool is useful to you. Please let me know if you have comments or questions.
+
+Jeremy Schichor
+eCornell
+jschichor@ecornell.com
