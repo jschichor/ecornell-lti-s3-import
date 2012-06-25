@@ -1,0 +1,74 @@
+<!DOCTYPE web-app PUBLIC
+    "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>S3 Import</display-name>
+
+    <servlet>
+        <servlet-name>IconServlet</servlet-name>
+        <servlet-class>com.ecornell.util.IconServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>S3Servlet</servlet-name>
+        <servlet-class>com.ecornell.lti.S3Servlet</servlet-class>
+
+        <init-param>
+            <param-name>testing</param-name>
+            <param-value>Y</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>prefix</param-name>
+            <param-value>/s3</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>accessKey</param-name>
+            <param-value><!--PUT YOUR S3 ACCESS KEY HERE--></param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>secretKey</param-name>
+            <param-value><!--PUT YOUR S3 SECRET KEY HERE--></param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>cloudBucket</param-name>
+            <param-value><!--PUT YOUR CLOUDFRONT BUCKET'S NAME HERE--></param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>server</param-name>
+            <param-value><!--PUT YOUR OEMBED ENDPOINT SERVER HERE--></param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>s3Server</param-name>
+            <param-value>https://s3.amazonaws.com</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>cloudServer</param-name>
+            <param-value>https://cloudfront.ecornell.com</param-value>
+        </init-param>
+    </servlet>
+
+
+
+    <servlet-mapping>
+        <servlet-name>IconServlet</servlet-name>
+        <url-pattern>/icon/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>S3Servlet</servlet-name>
+        <url-pattern>/S3/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>S3Servlet</servlet-name>
+        <url-pattern>/s3/*</url-pattern>
+    </servlet-mapping>
+</web-app>
